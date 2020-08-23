@@ -4,7 +4,7 @@
 
 ## 生成新的SSH密钥
 
-`SSH_KEY`: 创建一个 [SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) ，将公钥`id_rsa.pub`保存到[Github SSH keys](https://github.com/settings/keys),将私钥`id_rsa`在 GitHub 项目的 Settings -> Secrets 路径下配置好 GITEE_KEY
+`SSH_KEY`: 创建一个 [SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) ，将公钥`id_rsa.pub`保存到[Github SSH keys](https://github.com/settings/keys)、和[Gitee SSH公钥](https://gitee.com/profile/sshkeys),将私钥`id_rsa`在 GitHub 项目的 Settings -> Secrets 路径下配置好 GITEE_KEY
 
 <img src="img\1.jpg" style="zoom:50%;" />
 
