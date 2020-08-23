@@ -1,0 +1,20 @@
+name: 'Sync repository'
+description: 'Sync repository to Gitee.'
+branding:
+  icon: 'git-branch'
+  color: 'green'
+inputs:
+  source-repo:
+    description: 'GitHub存储库的SSH URL.'
+    required: true
+    default: ''
+  destination-repo:
+    description: 'Gitee存储库的SSH URL.'
+    required: true
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.github-repo }}
+    - ${{ inputs.gitee-repo }}

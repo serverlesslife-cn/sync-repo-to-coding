@@ -1,0 +1,21 @@
+name: Sync Repository Action
+on:
+  push:
+  schedule:
+    # 每天北京时间0点同步
+    - cron:  '0 16 * * *'
+
+jobs:
+  result-spider:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync to Gitee
+      uses: x-dr/sync-repo-to-gitee@master
+      env:
+          # 在 Settings->Secrets 配置 GITEE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_KEY }}
+      with:
+          # 替换为你的 GitHub 源仓库地址
+          source-repo: "git@github.com:x-dr/sync-repo-to-gitee.git"
+          # 替换为你的 Gitee 目标仓库地址
+          destination-repo: "git@gitee.com:goindex/sync-repo-to-gitee.git"
