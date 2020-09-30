@@ -16,6 +16,6 @@ jobs:
           SSH_KEY: ${{ secrets.GITEE_KEY }}
       with:
           # 替换为你的 GitHub 源仓库地址
-          github-repo: "git@github.com:x-dr/qiandao.git"
+          github-repo: "git@github.com:x-dr/sync-repo-to-gitee.git"
           # 替换为你的 Gitee 目标仓库地址
-          gitee-repo: "git@gitee.com:goindex/qiandao.git"
+          gitee-repo: "git@gitee.com:goindex/sync-repo-to-gitee.git"
