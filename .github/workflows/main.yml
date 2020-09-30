@@ -1,9 +1,9 @@
 name: Sync Repository Action
 on:
   push:
-  schedule:
+  #schedule:
     # 每天北京时间0点同步
-    - cron:  '0 16 * * *'
+   # - cron:  '0 16 * * *'
 
 jobs:
   Sync:
