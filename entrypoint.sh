@@ -2,10 +2,10 @@
 
 set -e
 
-if [[ -n "$SSH_KEY" ]]
+if [[ -n "$SSH_PRIVATE_KEY" ]]
 then
   mkdir -p /root/.ssh
-  echo "$SSH_KEY" > /root/.ssh/id_rsa
+  echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
   chmod 600 /root/.ssh/id_rsa
 fi
 
