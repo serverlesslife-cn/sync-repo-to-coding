@@ -1,18 +1,22 @@
 # Sync Repository Action
 
+本仓库是基于 [x-dr/sync-repo-to-gitee](https://github.com/x-dr/sync-repo-to-gitee) 进行的修改。
 
+用于将 [GitHub](https://github.com/) 代码仓库同步到 [CODING](https://coding.net/) 代码仓库。
 
-## 生成新的SSH密钥
+## SSH 密钥配置
 
-`SSH_KEY`: 创建一个 [SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) ，将公钥`id_rsa.pub`保存到[Github SSH keys](https://github.com/settings/keys)和[Gitee SSH公钥](https://gitee.com/profile/sshkeys),将私钥`id_rsa`在 GitHub 项目的 Settings -> Secrets 路径下配置好 GITEE_KEY
-
-<img src="img\1.jpg" style="zoom:50%;" />
+创建一个 [SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) ，
+将公钥`id_rsa.pub`保存到 [Github SSH keys](https://github.com/settings/keys)和
+「CODING 个人账户——> SSH公钥」，
+将私钥 `id_rsa` 在 GitHub 项目的 Settings -> Secrets 路径下配置好 CODING_PRIVATE_KEY
+![add-secret](img/add-secret.png)
 
 
 ## Example workflow
 
 ```
-name: Sync Repository Action
+name: Sync Repo to CODING
 on:
   push:
   schedule:
@@ -23,16 +27,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to Gitee
-      uses: x-dr/sync-repo-to-gitee@master
+    - name: Sync to CODING
+      uses: serverlesslife-cn/sync-repo-to-coding@master
       env:
-          # 在 Settings->Secrets 配置 GITEE_KEY
-          SSH_KEY: ${{ secrets.GITEE_KEY }}
+          # 在 GitHub Settings->Secrets 配置 CODING_PRIVATE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.CODING_PRIVATE_KEY }}
       with:
           # 注意替换为你的 GitHub 源仓库地址
-          github-repo: "git@github.com:x-dr/sync-repo-to-gitee.git"
-          # 注意替换为你的 Gitee 目标仓库地址
-          gitee-repo: "git@gitee.com:goindex/sync-repo-to-gitee.git"
+          github-repo: "git@github.com:serverlesslife-cn/sync-repo-to-coding.git"
+          # 注意替换为你的 CODING 目标仓库地址
+          coding-repo: "git@e.coding.net:donghui1/serverlesslife/sync-repo-to-coding.git"
 ```
 
 

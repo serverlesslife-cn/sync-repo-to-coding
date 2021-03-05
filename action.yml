@@ -1,15 +1,15 @@
-name: 'Sync repository'
-description: 'Sync repository to Gitee.'
+name: 'Sync Repo to CODING'
+description: 'Sync Repository to CODING'
 branding:
   icon: 'git-branch'
   color: 'green'
 inputs:
   github-repo:
-    description: 'GitHub存储库的SSH URL.'
+    description: 'GitHub 代码仓库的 SSH URL'
     required: true
     default: ''
-  gitee-repo:
-    description: 'Gitee存储库的SSH URL.'
+  coding-repo:
+    description: 'CODING 代码仓库的 SSH URL'
     required: true
     default: ''
 runs:
@@ -17,4 +17,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.github-repo }}
-    - ${{ inputs.gitee-repo }}
+    - ${{ inputs.coding-repo }}

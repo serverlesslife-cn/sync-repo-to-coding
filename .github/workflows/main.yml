@@ -1,21 +1,18 @@
-name: Sync Repository Action
+name: Sync Repo to CODING
 on:
   push:
-  #schedule:
-    # 每天北京时间0点同步
-   # - cron:  '0 16 * * *'
 
 jobs:
-  Sync:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to Gitee
-      uses: x-dr/sync-repo-to-gitee@master
+    - name: Sync to CODING
+      uses: serverlesslife-cn/sync-repo-to-coding@master
       env:
-          # 在 Settings->Secrets 配置 GITEE_KEY
-          SSH_KEY: ${{ secrets.GITEE_KEY }}
+          # 在 GitHub Settings->Secrets 配置 CODING_PRIVATE_KEY
+          SSH_PRIVATE_KEY: ${{ secrets.CODING_PRIVATE_KEY }}
       with:
-          # 替换为你的 GitHub 源仓库地址
-          github-repo: "git@github.com:x-dr/sync-repo-to-gitee.git"
-          # 替换为你的 Gitee 目标仓库地址
-          gitee-repo: "git@gitee.com:goindex/sync-repo-to-gitee.git"
+          # 注意替换为你的 GitHub 源仓库地址
+          github-repo: "git@github.com:serverlesslife-cn/sync-repo-to-coding.git"
+          # 注意替换为你的 CODING 目标仓库地址
+          coding-repo: "git@e.coding.net:donghui1/serverlesslife/sync-repo-to-coding.git"
