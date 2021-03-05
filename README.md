@@ -1,4 +1,4 @@
-# Sync Repository Action
+# Sync Repo to CODING
 
 本仓库是基于 [x-dr/sync-repo-to-gitee](https://github.com/x-dr/sync-repo-to-gitee) 进行的修改。
 
@@ -10,10 +10,10 @@
 将公钥`id_rsa.pub`保存到 [Github SSH keys](https://github.com/settings/keys)和
 「CODING 个人账户——> SSH公钥」，
 将私钥 `id_rsa` 在 GitHub 项目的 Settings -> Secrets 路径下配置好 CODING_PRIVATE_KEY
+
 ![add-secret](img/add-secret.png)
 
-
-## Example workflow
+## workflow example
 
 ```
 name: Sync Repo to CODING
@@ -27,7 +27,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to CODING
+    - name: Sync Repo to CODING
       uses: serverlesslife-cn/sync-repo-to-coding@master
       env:
           # 在 GitHub Settings->Secrets 配置 CODING_PRIVATE_KEY

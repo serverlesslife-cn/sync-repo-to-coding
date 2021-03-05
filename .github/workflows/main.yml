@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Sync to CODING
+    - name: Sync Repo to CODING
       uses: serverlesslife-cn/sync-repo-to-coding@master
       env:
           # 在 GitHub Settings->Secrets 配置 CODING_PRIVATE_KEY
