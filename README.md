@@ -1,5 +1,7 @@
 # Sync Repo to CODING
 
+Forked this repo to backup.
+
 本仓库是基于 [x-dr/sync-repo-to-gitee](https://github.com/x-dr/sync-repo-to-gitee) 进行的修改。
 
 用于将 [GitHub](https://github.com/) 代码仓库同步到 [CODING](https://coding.net/) 代码仓库。
